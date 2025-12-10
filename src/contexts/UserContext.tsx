@@ -21,7 +21,9 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
     // Create audio element for background music
     audioRef.current = new Audio('/lagu-saya.mp3');
     audioRef.current.loop = true;
-    audioRef.current.volume = 0.8;
+
+    audioRef.current.volume = 1.1;
+    1562f16 (add vercel.json)
 
     return () => {
       if (audioRef.current) {
