@@ -20,7 +20,7 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     audioRef.current = new Audio('/lagu-saya.mp3');
     audioRef.current.loop = true;
-    audioRef.current.volume = 0.3;
+    audioRef.current.volume = 0.1;
 
     return () => {
       if (audioRef.current) {
