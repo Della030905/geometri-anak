@@ -18,12 +18,9 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    // Create audio element for background music
     audioRef.current = new Audio('/lagu-saya.mp3');
     audioRef.current.loop = true;
-
     audioRef.current.volume = 1.1;
-    1562f16 (add vercel.json)
 
     return () => {
       if (audioRef.current) {
@@ -36,9 +33,7 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     if (audioRef.current) {
       if (isMusicOn) {
-        audioRef.current.play().catch(() => {
-          // Autoplay might be blocked
-        });
+        audioRef.current.play().catch(() => {});
       } else {
         audioRef.current.pause();
       }
@@ -46,10 +41,10 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
   }, [isMusicOn]);
 
   return (
-    <UserContext.Provider value={{ 
-      userName, 
-      setUserName, 
-      isMusicOn, 
+    <UserContext.Provider value={{
+      userName,
+      setUserName,
+      isMusicOn,
       setIsMusicOn,
       isVoiceOn,
       setIsVoiceOn
