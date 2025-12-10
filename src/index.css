@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Fredoka:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Cheerful Kids Geometry Theme */
+    --background: 210 100% 97%;
+    --foreground: 240 30% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 30% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 30% 20%;
+
+    /* Bright Sky Blue */
+    --primary: 200 90% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Warm Coral Orange */
+    --secondary: 25 95% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Soft Lavender */
+    --muted: 270 30% 95%;
+    --muted-foreground: 240 20% 45%;
+
+    /* Sunny Yellow */
+    --accent: 45 100% 55%;
+    --accent-foreground: 240 30% 20%;
+
+    /* Candy Pink */
+    --pink: 330 85% 65%;
+    --pink-foreground: 0 0% 100%;
+
+    /* Fresh Green */
+    --green: 140 70% 45%;
+    --green-foreground: 0 0% 100%;
+
+    /* Playful Purple */
+    --purple: 270 70% 60%;
+    --purple-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 200 30% 85%;
+    --input: 200 30% 90%;
+    --ring: 200 90% 50%;
+
+    --radius: 1rem;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(200 90% 50%) 0%, hsl(270 70% 60%) 50%, hsl(330 85% 65%) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(25 95% 60%) 0%, hsl(45 100% 55%) 100%);
+    --gradient-cool: linear-gradient(135deg, hsl(200 90% 50%) 0%, hsl(140 70% 45%) 100%);
+    --gradient-candy: linear-gradient(135deg, hsl(330 85% 65%) 0%, hsl(270 70% 60%) 100%);
+    --gradient-sky: linear-gradient(180deg, hsl(200 100% 85%) 0%, hsl(200 100% 95%) 100%);
+
+    /* Shadows */
+    --shadow-glow-primary: 0 0 20px hsl(200 90% 50% / 0.5);
+    --shadow-glow-secondary: 0 0 20px hsl(25 95% 60% / 0.5);
+    --shadow-glow-pink: 0 0 20px hsl(330 85% 65% / 0.5);
+    --shadow-glow-green: 0 0 20px hsl(140 70% 45% / 0.5);
+    --shadow-glow-purple: 0 0 20px hsl(270 70% 60% / 0.5);
+    --shadow-glow-accent: 0 0 20px hsl(45 100% 55% / 0.5);
+    --shadow-card: 0 8px 32px hsl(200 50% 50% / 0.15);
+    --shadow-button: 0 4px 16px hsl(200 50% 50% / 0.25);
+
+    /* Fonts */
+    --font-display: 'Bubblegum Sans', cursive;
+    --font-body: 'Fredoka', sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .btn-geometry {
+    @apply relative overflow-hidden transition-all duration-300 ease-out;
+    @apply font-display text-lg font-bold;
+    @apply transform hover:scale-105 active:scale-95;
+  }
+
+  .btn-circle {
+    @apply rounded-full aspect-square flex items-center justify-center;
+  }
+
+  .btn-triangle {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+
+  .btn-hexagon {
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  }
+
+  .glow-primary {
+    box-shadow: var(--shadow-glow-primary);
+  }
+
+  .glow-secondary {
+    box-shadow: var(--shadow-glow-secondary);
+  }
+
+  .glow-pink {
+    box-shadow: var(--shadow-glow-pink);
+  }
+
+  .glow-green {
+    box-shadow: var(--shadow-glow-green);
+  }
+
+  .glow-purple {
+    box-shadow: var(--shadow-glow-purple);
+  }
+
+  .glow-accent {
+    box-shadow: var(--shadow-glow-accent);
+  }
+
+  .card-geometry {
+    @apply bg-card rounded-3xl p-6;
+    box-shadow: var(--shadow-card);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-warm {
+    background: var(--gradient-warm);
+  }
+
+  .gradient-cool {
+    background: var(--gradient-cool);
+  }
+
+  .gradient-candy {
+    background: var(--gradient-candy);
+  }
+
+  .gradient-sky {
+    background: var(--gradient-sky);
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .floating {
+    animation: floating 3s ease-in-out infinite;
+  }
+
+  .pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  .bounce-in {
+    animation: bounceIn 0.6s ease-out;
+  }
+
+  .slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+
+  .wiggle {
+    animation: wiggle 0.5s ease-in-out;
+  }
+}
+
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(200 90% 50% / 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(200 90% 50% / 0.7);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
