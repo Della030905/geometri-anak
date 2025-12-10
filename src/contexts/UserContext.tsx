@@ -21,7 +21,7 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
     // Create audio element for background music
     audioRef.current = new Audio('/lagu-saya.mp3');
     audioRef.current.loop = true;
-    audioRef.current.volume = 0.3;
+    audioRef.current.volume = 0.4;
 
     return () => {
       if (audioRef.current) {
