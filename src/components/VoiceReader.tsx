@@ -21,6 +21,7 @@ export const VoiceReader = ({ text, autoPlay = true }: VoiceReaderProps) => {
     utterance.lang = 'id-ID';
     utterance.rate = 0.9;
     utterance.pitch = 3.1;
+    utterance.volume = 1.0;
     
     utteranceRef.current = utterance;
     
